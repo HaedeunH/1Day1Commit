@@ -1,3 +1,5 @@
+// https://programmers.co.kr/learn/courses/30/lessons/12943
+
 class Solution {  
     public int solution(long num) {
         return doCollatz(num);
