@@ -49,9 +49,9 @@ public class Function {
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         Function f = new Function(progresses, speeds);
-		Queue<Integer> prograssQueue = new LinkedList<Integer>();
-		f.addQueue(prograssQueue);
-		f.queuePolling(prograssQueue);
+	Queue<Integer> prograssQueue = new LinkedList<Integer>();
+	f.addQueue(prograssQueue);
+	f.queuePolling(prograssQueue);
         return f.getResult();
     }
 }
