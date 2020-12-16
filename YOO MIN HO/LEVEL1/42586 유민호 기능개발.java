@@ -38,7 +38,7 @@ public class Function {
 			}
 		}
         result = new int[resultnum+1];
-		result = Arrays.copyOf(tempresult, resultnum+1);
+	result = Arrays.copyOf(tempresult, resultnum+1);
 	}
 	
 	int[] getResult() {
