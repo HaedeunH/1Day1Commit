@@ -3,33 +3,33 @@ import java.util.*;
 https://programmers.co.kr/learn/courses/30/lessons/42586
 
 public class Function {
-	int[] prograss;
+	int[] progress;
 	int[] speeds;
 	int[] result;
 	int day;
 	int num;
 	int resultnum;
 	
-	public Function(int[] prograss, int[] speeds) {
-		this.prograss = prograss;
+	public Function(int[] progress, int[] speeds) {
+		this.prograss = progress;
 		this.speeds = speeds;
 	}
 	
-	void addQueue(Queue<Integer> prograssQueue) {
-		int length = prograss.length;
+	void addQueue(Queue<Integer> progressQueue) {
+		int length = progress.length;
 		for(int i=0;i<length;i++) {
-			prograssQueue.offer(prograss[i]);			
+			progressQueue.offer(progress[i]);			
 		}
 	}
     
-	void queuePolling(Queue<Integer> prograssQueue) {
+	void queuePolling(Queue<Integer> progressQueue) {
         int[] tempresult = new int[100];
-		while(!prograssQueue.isEmpty()) {
-			if(prograssQueue.peek()+(day*speeds[num])>=100) {
-				prograssQueue.poll();
+		while(!progressQueue.isEmpty()) {
+			if(progressQueue.peek()+(day*speeds[num])>=100) {
+				progressQueue.poll();
 				num++;
-                tempresult[resultnum]++;
-				if(!prograssQueue.isEmpty()&&prograssQueue.peek()+(day*speeds[num])<100) {
+                		tempresult[resultnum]++;
+				if(!progressQueue.isEmpty()&&progressQueue.peek()+(day*speeds[num])<100) {
 					resultnum++;
 				}
 			}
@@ -49,9 +49,9 @@ public class Function {
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         Function f = new Function(progresses, speeds);
-	Queue<Integer> prograssQueue = new LinkedList<Integer>();
-	f.addQueue(prograssQueue);
-	f.queuePolling(prograssQueue);
+	Queue<Integer> progressQueue = new LinkedList<Integer>();
+	f.addQueue(progressQueue);
+	f.queuePolling(progressQueue);
         return f.getResult();
     }
 }
